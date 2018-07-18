@@ -100,4 +100,10 @@ $(document).ready(function () {
         // }, 1000 * 60);
     });
 
+    setInterval(function(){
+         location.reload(); 
+        // $('div.table').load(location.href + ' .tbody');
+        // //  console.log('refreshed')
+    }, 1000 * 60);
+
 });
