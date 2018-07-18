@@ -62,13 +62,13 @@ $(document).ready(function () {
 
         //moment.js
         //convert start time
-        var format = 'HH:mm';
+        var format = 'HH:mm a';
         var convertedFormat = moment(childTime, format).subtract(1, 'years');
-        console.log(convertedFormat)
+        console.log('Converted Format: ' + convertedFormat)
 
         //logging current time
         var currentTime = moment();
-        console.log('Current Time: ' + moment(currentTime).format('HH:mm'));
+        console.log('Current Time: ' + moment(currentTime).format('hh:mm a'));
 
         //getting difference between times
         var timeDifference = moment().diff(moment(convertedFormat), 'minutes');
@@ -84,8 +84,8 @@ $(document).ready(function () {
 
         //Next Train
         var nextTrain = moment().add(timeUntil, 'minutes');
-        console.log('Arrival Time: ' + moment(nextTrain).format('HH:mm'));
-        var nextTrainFormatted = moment(nextTrain).format('HH:mm');
+        console.log('Arrival Time: ' + moment(nextTrain).format('hh:mm a'));
+        var nextTrainFormatted = moment(nextTrain).format('hh:mm a');
 
         //logging the next train time and minutes till train to the console
         var nextArrival = $('<td class="nextArrival">').text(nextTrainFormatted);
